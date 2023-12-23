@@ -1,9 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #f7f8fa;
 }
 
 button {
   cursor: pointer;
+}
+
+a {
+  color: #8b44ff;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: auto;
 }
