@@ -1,3 +1,72 @@
 .header {
-  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  margin-bottom: 30px;
+  padding: 0 45px 0 0;
+  background-color: #fff;
+
+  .logo {
+    margin-right: 40px;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #f06202;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+
+    p::before {
+      content: "H";
+      margin-right: 10px;
+      padding: 0 4px;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+  }
+
+  .userAction {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    color: #0f172a;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+    button {
+      color: #fff;
+      background-color: #3abd25;
+      height: 40px;
+      padding: 7px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    img {
+      margin-right: 10px;
+    }
+
+    .loginBtn {
+      display: flex;
+      color: #0f172a;
+      background-color: #fff;
+      font-size: 16px;
+      border: none;
+
+      &:hover {
+        border: 1px solid #0f172a;
+      }
+    }
+  }
 }

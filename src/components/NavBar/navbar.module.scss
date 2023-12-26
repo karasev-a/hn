@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  width: 900px;
+  height: 40px;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  a {
+    margin-right: 10px;
+    padding: 7px 8px;
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+    &:hover {
+      text-decoration: solid;
+      color: #f06202;
+    }
+  }
+
+  .active {
+    border-radius: 6px;
+    border: 1px solid #f06202;
+    background: rgba(240, 98, 2, 0.15);
+
+    &:hover {
+      color: #0f172a;
+    }
+  }
+}

@@ -7,11 +7,14 @@
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   font-size: 16px;
-  background-color: #f7f8fa;
 }
 
 button {
   cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a {
@@ -30,6 +33,13 @@ img {
 }
 
 .wrapper {
-  width: 1440px;
+  background-color: #f7f8fa;
+  max-width: 1440px;
   margin: auto;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  height: calc(100vh - 170px);
 }

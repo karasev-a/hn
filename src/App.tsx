@@ -6,13 +6,19 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/new" element={<div>New Stories</div>} />
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/comments" element={<div>Comments</div>} />
+            <Route path="/ask" element={<div>Ask</div>} />
+            <Route path="/show" element={<div>Show</div>} />
+            <Route path="/jobs" element={<div>Jobs</div>} />
+          </Routes>
+        </div>
+
         <Footer />
       </BrowserRouter>
     </div>
