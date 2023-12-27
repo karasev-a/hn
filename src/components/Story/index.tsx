@@ -1,7 +1,7 @@
 import React from "react";
-import closeIcon from "../../assets/close.svg";
-import messageIcon from "../../assets/message.svg";
-import { getDateTime } from "../../utils/getDateTime";
+import closeIcon from "@/assets/close.svg";
+import messageIcon from "@/assets/message.svg";
+import { getDateTime } from "@/utils/getDateTime";
 
 import styles from "./story.module.scss";
 

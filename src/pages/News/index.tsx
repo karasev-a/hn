@@ -1,5 +1,5 @@
 import React from "react";
-import Story from "../../components/Story";
+import Story from "@/components/Story";
 
 import styles from "./news.module.scss";
 

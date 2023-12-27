@@ -1,6 +1,6 @@
 import NavBar from "../NavBar";
 import styles from "./header.module.scss";
-import loginIcon from "../../assets/login.svg";
+import loginIcon from "@/assets/login.svg";
 
 const Header = () => {
   return (
