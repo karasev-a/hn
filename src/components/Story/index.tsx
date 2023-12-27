@@ -1,6 +1,7 @@
 import React from "react";
 import closeIcon from "../../assets/close.svg";
 import messageIcon from "../../assets/message.svg";
+import { getDateTime } from "../../utils/getDateTime";
 
 import styles from "./story.module.scss";
 
@@ -38,9 +39,9 @@ const Story: React.FC<StoryProps> = ({ index, story }) => {
         <div className={styles.description}>
           <p>by {by}</p>
           <p>
-            <a>website link</a>
+            <a>{new URL(url).hostname}</a>
           </p>
-          <p>{time}</p>
+          <p>{getDateTime(time)}</p>
           <p className={styles.message}>
             <img src={messageIcon} alt="" /> {descendants}
           </p>
