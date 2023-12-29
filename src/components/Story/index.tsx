@@ -5,7 +5,7 @@ import { getDateTime } from "@/utils/getDateTime";
 
 import styles from "./story.module.scss";
 
-interface Story {
+export interface IStory {
   by: string;
   descendants: number;
   id: number;
@@ -17,9 +17,9 @@ interface Story {
   url: string;
 }
 
-interface StoryProps {
+export interface StoryProps {
   index: number;
-  story: Story;
+  story: IStory;
 }
 
 const Story: React.FC<StoryProps> = ({ index, story }) => {
@@ -27,7 +27,7 @@ const Story: React.FC<StoryProps> = ({ index, story }) => {
 
   return (
     <div className={styles.story}>
-      <div className={styles.number}>{index + 100}.</div>
+      <div className={styles.number}>{index}.</div>
       <div className={styles.points}>
         <p>{score}</p>
         <p>points</p>
@@ -39,7 +39,7 @@ const Story: React.FC<StoryProps> = ({ index, story }) => {
         <div className={styles.description}>
           <p>by {by}</p>
           <p>
-            <a>{new URL(url).hostname}</a>
+            <a>{url && new URL(url).hostname}</a>
           </p>
           <p>{getDateTime(time)}</p>
           <p className={styles.message}>
