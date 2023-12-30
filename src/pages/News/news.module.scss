@@ -1,1 +1,19 @@
-
+.news {
+  display: flex;
+  flex-direction: column;
+  button {
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 5px 7px;
+    align-self: center;
+    color: #fff;
+    background-color: #f06202;
+    border-radius: 6px;
+    border: none;
+    &:hover {
+      border: 1px solid #f06202;
+      background-color: #fff;
+      color: #f06202;
+    }
+  }
+}

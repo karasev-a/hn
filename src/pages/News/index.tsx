@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Story, { IStory } from "@/components/Story";
 import { getStoriesIds, topStoriesUrl, getStories } from "@/services/api";
 
+import styles from "./news.module.scss";
+
 const STORIES_PER_PAGE = 5;
 
 const News: React.FC<any> = () => {
@@ -45,7 +47,7 @@ const News: React.FC<any> = () => {
   }, [storyIds]);
 
   return (
-    <div>
+    <div className={styles.news}>
       {stories.map((story, i) => (
         <Story key={story.id} index={i + 1} story={story} />
       ))}
