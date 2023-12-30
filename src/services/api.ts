@@ -2,12 +2,13 @@ import { IStory } from "@/components/Story";
 import axios from "axios";
 
 export const baseUrl = "https://hacker-news.firebaseio.com/v0/";
-export const topStoriesUrl = "topstories.json";
+export const topStories = "topstories";
+export const newStories = "newstories";
 export const itemUrl = "item/";
 
 export const getStoriesIds = async (path: string) => {
   try {
-    const res = await axios.get(`${baseUrl}/${path}`);
+    const res = await axios.get(`${baseUrl}/${path}.json`);
     return res.data;
   } catch (err) {
     console.error(err);

@@ -13,7 +13,7 @@ export interface IStory {
   score: number;
   time: number;
   title: string;
-  type: string;
+  type?: string;
   url: string;
 }
 
@@ -23,7 +23,7 @@ export interface StoryProps {
 }
 
 const Story: React.FC<StoryProps> = ({ index, story }) => {
-  let { by, descendants, title, score, time, type, url } = story;
+  let { by, descendants, title, score, time, url } = story;
 
   return (
     <div className={styles.story}>
