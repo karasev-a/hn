@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import {
   getStoriesIds,
   getStories,
+  getYesterdayStories,
   newStories,
   topStories,
 } from "@/services/api";
@@ -17,7 +18,7 @@ const News: React.FC<any> = () => {
   const options = {
     Top: topStories,
     Newest: newStories,
-    Past: Date.now().toString(),
+    Past: "date",
   };
 
   const [storyIds, setStoryIds] = useState<number[]>([]);
@@ -25,7 +26,7 @@ const News: React.FC<any> = () => {
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [selectedOption, setSelectedOption] = useState(options.Top);
+  const [selectedOption, setSelectedOption] = useState<string>(options.Top);
 
   const fetchStoryIds = async (type: string) => {
     const storiesId = await getStoriesIds(type);
@@ -52,6 +53,14 @@ const News: React.FC<any> = () => {
     setIsLoading(false);
   };
 
+  const fetchYesterdayStories = async () => {
+    setIsLoading(true);
+    const stories = await getYesterdayStories();
+    console.log("fetchYesterdayStories - ", stories);
+    setStories(stories);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     fetchStoryIds(selectedOption);
   }, []);
@@ -59,7 +68,11 @@ const News: React.FC<any> = () => {
   useEffect(() => {
     setStories([]);
     setPage(1);
-    storyIds.length && fetchStoryIds(selectedOption);
+    if (selectedOption === topStories || selectedOption === newStories) {
+      storyIds.length && fetchStoryIds(selectedOption);
+    } else {
+      fetchYesterdayStories();
+    }
   }, [selectedOption]);
 
   useEffect(() => {
@@ -77,8 +90,8 @@ const News: React.FC<any> = () => {
               name={el}
               type="text"
               value={options[optionKey]}
+              disabled={isLoading}
               isSelected={selectedOption == options[optionKey]}
-              setSelectedOption={setSelectedOption}
               handleClick={() => setSelectedOption(options[optionKey])}
             />
           );
@@ -87,13 +100,17 @@ const News: React.FC<any> = () => {
       {stories.map((story, i) => (
         <Story key={story.id} index={i + 1} story={story} />
       ))}
-      {hasMore && (
+      {hasMore && selectedOption !== options.Past && (
         <Button
           name={isLoading ? "Loading..." : "Load More"}
           type="primary"
           disabled={isLoading}
           handleClick={fetchMoreStories}
         />
+      )}
+
+      {selectedOption === options.Past && isLoading && (
+        <Button name={"Loading..."} type="primary" disabled={isLoading} />
       )}
     </div>
   );

@@ -10,5 +10,5 @@ export const getDateTime = (time: number) => {
     timeZone: "America/Los_Angeles" as const,
   };
 
-  return new Intl.DateTimeFormat(undefined, options).format(time);
+  return new Intl.DateTimeFormat(undefined, options).format(time * 1000);
 };

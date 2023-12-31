@@ -11,7 +11,7 @@ button {
   background-color: #f06202;
   border-radius: 6px;
   border: none;
-  &:hover {
+  &:hover:enabled {
     border: 1px solid #f06202;
     background-color: #fff;
     color: #f06202;
@@ -36,7 +36,7 @@ button {
   font-size: 16px;
   border: none;
 
-  &:hover {
+  &:hover:enabled {
     border: 1px solid #0f172a;
   }
 }
