@@ -49,8 +49,6 @@ export const getYesterdayStories = async () => {
   const storiesIds = await getStoriesIds("topstories");
   storiesIds.sort().reverse();
 
-  console.log("newestStoriesId - ", storiesIds);
-
   let left = 0;
   let right = storiesIds.length - 1;
 

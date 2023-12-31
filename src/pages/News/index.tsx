@@ -56,7 +56,6 @@ const News: React.FC<any> = () => {
   const fetchYesterdayStories = async () => {
     setIsLoading(true);
     const stories = await getYesterdayStories();
-    console.log("fetchYesterdayStories - ", stories);
     setStories(stories);
     setIsLoading(false);
   };
