@@ -1,6 +1,7 @@
 import NavBar from "../NavBar";
+import Button from "../Button";
 import styles from "./header.module.scss";
-import loginIcon from "../../assets/login.svg";
+import loginIcon from "@/assets/login.svg";
 
 const Header = () => {
   return (
@@ -10,10 +11,10 @@ const Header = () => {
       </div>
       <NavBar />
       <div className={styles.userAction}>
-        <button className={styles.loginBtn}>
-          <img src={loginIcon} alt="login icon" /> Login
-        </button>
-        <button>Submit</button>
+        <Button name="Login" type="text">
+          <img src={loginIcon} alt="login icon" />
+        </Button>
+        <Button name="Submit" type="secondary" />
       </div>
     </header>
   );
