@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <p>Hacker News</p>
+        <p>HN</p>
       </div>
       <NavBar />
       <div className={styles.userAction}>
