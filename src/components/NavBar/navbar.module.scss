@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  // width: 900px;
+  flex: 2 2;
+  height: 40px;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  a {
+    margin-right: 10px;
+    padding: 7px 8px;
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      text-decoration: solid;
+      color: #c45003;
+    }
+  }
+
+  .active {
+    border-radius: 6px;
+    border: 1px solid #c45003;
+    background: rgba(240, 98, 2, 0.15);
+
+    &:hover {
+      color: #0f172a;
+    }
+  }
+}
